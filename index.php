@@ -89,6 +89,9 @@
                     case "listarcolaboradores":
                         include("listar-colaboradores.php");
                         break;
+                    case "salvarorcamento":
+                        include("salvar-orcamento.php");
+                        break;
                     default:
                         print "<h1>Bem vindo!</h1>";
                 }

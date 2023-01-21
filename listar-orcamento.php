@@ -1,31 +1,39 @@
-<!--  tela não implementada! inserção manual apenas para testes -->
+<h1>Lista de Orçamentos</h1>
+<?php
 
-<div class="mb-3">
-    <table>
-        <table class='table table-hover table-bordered'>
-            <tr style='background-color: #80ced6;'>
-                <th>ID do Orçamento</th>
-                <th>Data</th>
-                <th>Descrição</th>
-                <th>Cliente</th>
-                <th>Colaborador</th>
-                <th>Total do orçamento</th>
-            </tr>
-            <tr>
-                <td>01</td>
-                <td>02/08/2022</td>
-                <td>Venda</td>
-                <td>Elon Musk</td>
-                <td>Alexsander Silva</td>
-                <td>R$ 20,00</td>
-            </tr>
-            <tr>
-                <td>02</td>
-                <td>20/01/2023</td>
-                <td>Manutenção</td>
-                <td>João Gomes</td>
-                <td>Alexsander Silva</td>
-                <td>R$ 357,00</td>
-            </tr>
-        </table>
-</div>
+    $sql = "SELECT * FROM colaboradores";
+
+    $res = $conn->query($sql);
+
+    $qtd = $res->num_rows;
+
+    if($qtd > 0){
+        print "<table class='table table-hover table-bordered'>";
+            print "<tr style='background-color: #80ced6;'>";
+            print "<th>Id do Orçamento</th>";
+            print "<th>Cliente</th>";
+            print "<th>Telefone</th>";
+            print "<th>Email</th>";
+            print "<th>Colaborador</th>";
+            print "<th>Matricula</th>";
+            print "<th>Total do Orçamento</th>";
+            print "</tr>";
+        while ($row = $res->fetch_object()) {
+            print "<tr>";
+            print "<td>".$row->id."</td>";
+            print "<td>".$row->cliente."</td>";
+            print "<td>".$row->telefone."</td>";
+            print "<td>".$row->email."</td>";
+            print "<td>".$row->colaborador."</td>";
+            print "<td>".$row->matricula."</td>";
+            print "<td>".$row->total."</td>";
+            print "<td style='display: flex;'>
+                    <button onclick=\"if(confirm('Tem certeza que deseja excluir o orçamento?')){location.href='?page=salvarorcamento&acao=excluir&id=".$row->id."'}else{false;}\" class='btn btn-danger'>Excluir</button>
+                    </td>";
+            print "</tr>";
+        }
+        print "</table>";
+    }else {
+        print "<p class='alert alert-danger'>Não encontrou resultados!</p>";
+    }
+?>

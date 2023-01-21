@@ -1,3 +1,5 @@
+<!-- não implementada! -->
+
 <h1>Novo Orçamento</h1>
 <form action="?page=salvar" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
