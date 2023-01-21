@@ -1,16 +1,31 @@
-<!-- não implementada! -->
-
 <h1>Novo Orçamento</h1>
-<form action="?page=salvar" method="POST">
+<form action="?page=salvarorcamento" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
     <input type="hidden" name="date">
     <div class="mb-3">
         <label>Cliente</label>
-        <input type="text" name="nome" class="form-control" required>
+        <select id="cliente" name="cliente" class="form-control" required>
+            <option value="">Selecione o cliente</option>
+            <?php
+            $sql = "SELECT * FROM clientes";
+
+            $res = $conn->query($sql);
+
+            $qtd = $res->num_rows;
+
+            if ($qtd > 0) {
+                while ($row = $res->fetch_object()) {
+                    print "<option value=" . $row->nome . ">" . $row->nome . "</option>";
+                }
+            }
+            ?>
+        </select>
     </div>
+
+
     <div class="mb-3">
         <label>Telefone</label>
-        <input style="width: 25%;" type="text" name="telefone" class="form-control" readonly>
+        <input style="width: 25%;" type="text" name="telefone" class="form-control"  readonly>
     </div>
     <div class="mb-3">
         <label>Email</label>
@@ -19,7 +34,22 @@
     <hr />
     <div class="mb-3">
         <label>Colaborador</label>
-        <input type="text" name="colaborador" class="form-control" required>
+        <select id="colaborador" name="colaborador" class="form-control" required>
+            <option value="">Selecione o colaborador</option>
+            <?php
+            $sql = "SELECT * FROM colaboradores";
+
+            $res = $conn->query($sql);
+
+            $qtd = $res->num_rows;
+
+            if ($qtd > 0) {
+                while ($row = $res->fetch_object()) {
+                    print "<option value=" . $row->nome . ">" . $row->nome . "</option>";
+                }
+            }
+            ?>
+        </select>
     </div>
     <div class="mb-3">
         <label>Matricula</label>

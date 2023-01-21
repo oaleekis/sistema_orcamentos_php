@@ -1,7 +1,7 @@
 <h1>Lista de Orçamentos</h1>
 <?php
 
-    $sql = "SELECT * FROM colaboradores";
+    $sql = "SELECT * FROM orcamento";
 
     $res = $conn->query($sql);
 
