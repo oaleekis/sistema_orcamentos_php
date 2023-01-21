@@ -25,11 +25,7 @@
 
     <div class="mb-3">
         <label>Telefone</label>
-        <input style="width: 25%;" type="text" name="telefone" class="form-control"  readonly>
-    </div>
-    <div class="mb-3">
-        <label>Email</label>
-        <input style="width: 50%;" type="email" name="email" class="form-control" readonly>
+        <input style="width: 25%;" type="text" name="telefone" class="form-control">
     </div>
     <hr />
     <div class="mb-3">
@@ -51,11 +47,6 @@
             ?>
         </select>
     </div>
-    <div class="mb-3">
-        <label>Matricula</label>
-        <input style="width: 25%;" type="text" name="matricula" class="form-control" readonly>
-    </div>
-
     <hr />
     <div class="mb-3">
         <label>Item</label>
