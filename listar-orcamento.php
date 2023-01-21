@@ -1,15 +1,15 @@
 <!--  tela não implementada! inserção manual apenas para testes -->
 
 <div class="mb-3">
-        <table>
+    <table>
         <table class='table table-hover table-bordered'>
             <tr style='background-color: #80ced6;'>
-            <th>ID do Orçamento</th>
-            <th>Data</th>
-            <th>Descrição</th>
-            <th>Cliente</th>
-            <th>Colaborador</th>
-            <th>Total do orçamento</th>
+                <th>ID do Orçamento</th>
+                <th>Data</th>
+                <th>Descrição</th>
+                <th>Cliente</th>
+                <th>Colaborador</th>
+                <th>Total do orçamento</th>
             </tr>
             <tr>
                 <td>01</td>
@@ -28,4 +28,4 @@
                 <td>R$ 357,00</td>
             </tr>
         </table>
-    </div>
+</div>
