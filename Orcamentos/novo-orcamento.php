@@ -21,12 +21,6 @@
             ?>
         </select>
     </div>
-
-
-    <div class="mb-3">
-        <label>Telefone</label>
-        <input style="width: 25%;" type="text" name="telefone" class="form-control">
-    </div>
     <hr />
     <div class="mb-3">
         <label>Colaborador</label>
@@ -51,7 +45,23 @@
     <div class="mb-3">
         <label>Item</label>
         <div style="display: flex;">
-            <input style="width: 25%;" type="text" name="item" class="form-control">
+            <select id="item" name="item" class="form-control" required>
+                <option value="">Selecione o item</option>
+                <?php
+                $sql = "SELECT * FROM itens";
+
+                $res = $conn->query($sql);
+
+                $qtd = $res->num_rows;
+                if ($qtd > 0) {
+                    while ($row = $res->fetch_object()) {
+                        print "<option value=" . $row->descricao . ">" . $row->descricao . "</option>";
+                    }
+                }
+                ?>
+            </select>
+            <input style="width: 25%; margin: 0px 20px;" type="text" name="quantidade" id="quantidade" class="form-control"
+                placeholder="Quantidade">
             <button style="margin-left: 10px;" type="submit" class="btn btn-secondary">Adicionar</button>
         </div>
     </div>
@@ -64,18 +74,18 @@
                 <th>Valor</th>
                 <th>Total</th>
             </tr>
-            <tr>
-                <td>02</td>
-                <td>item de exemplo</td>
-                <td>R$ 10,00</td>
-                <td>R$ 20,00</td>
-            </tr>
+
+            <?php
+
+               
+            
+            ?>
         </table>
     </div>
     <div style="display: flex; align-items: center; justify-content: end;" class="mb-3">
         <label>Total:</label>
         <input style="width: 25%; margin-left: 10px;" type="text" name="total" class="form-control" readonly
-            placeholder="R$ 20,00">
+            placeholder="00,00">
     </div>
 
     <hr />
