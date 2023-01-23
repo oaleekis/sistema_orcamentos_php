@@ -30,21 +30,32 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Cadastro
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="?page=cliente">Cliente</a></li>
-                            <li><a class="dropdown-item" href="?page=colaborador">Colaborador</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="?page=listarclientes">Listar Clientes</a></li>
-                            <li><a class="dropdown-item" href="?page=listarcolaboradores">Listar Colaboradores</a></li>
-                            <li><a class="dropdown-item" href="?page=listaorcamentos">Listar Orçamentos</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                        aria-expanded="false">
+                        Cadastro
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="?page=cliente">Cliente</a></li>
+                        <li><a class="dropdown-item" href="?page=colaborador">Colaborador</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="?page=listarclientes">Listar Clientes</a></li>
+                        <li><a class="dropdown-item" href="?page=listarcolaboradores">Listar Colaboradores</a></li>
+                        <li><a class="dropdown-item" href="?page=listaorcamentos">Listar Orçamentos</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Estoque
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="?page=estoque">Estoque</a></li>
+                        <li><a class="dropdown-item" href="?page=cadastraritem">Cadastrar Item</a></li>
+                        <li>
+                    </ul>
+                </li>
+            </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Pesquisar</button>
@@ -85,6 +96,15 @@
                         break;
                     case "listarclientes":
                         include("listar-clientes.php");
+                        break;
+                    case "estoque":
+                        include("listar-estoque.php");
+                        break;
+                    case "cadastraritem":
+                        include("novo-estoque.php");
+                        break;
+                    case "salvaritem":
+                        include("salvar-estoque.php");
                         break;
                     case "listarcolaboradores":
                         include("listar-colaboradores.php");
