@@ -30,32 +30,24 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Cadastro
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="?page=cliente">Cliente</a></li>
-                        <li><a class="dropdown-item" href="?page=colaborador">Colaborador</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="?page=listarclientes">Listar Clientes</a></li>
-                        <li><a class="dropdown-item" href="?page=listarcolaboradores">Listar Colaboradores</a></li>
-                        <li><a class="dropdown-item" href="?page=listaorcamentos">Listar Orçamentos</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Estoque
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="?page=estoque">Estoque</a></li>
-                        <li><a class="dropdown-item" href="?page=cadastraritem">Cadastrar Item</a></li>
-                        <li>
-                    </ul>
-                </li>
-            </ul>
+                            aria-expanded="false">
+                            Cadastro
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="?page=cliente">Cliente</a></li>
+                            <li><a class="dropdown-item" href="?page=colaborador">Colaborador</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="?page=listarclientes">Listar Clientes</a></li>
+                            <li><a class="dropdown-item" href="?page=listarcolaboradores">Listar Colaboradores</a></li>
+                            <li><a class="dropdown-item" href="?page=listaorcamentos">Listar Orçamentos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?page=estoque">Estoque</a>
+                    </li>
+                </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Pesquisar</button>
@@ -70,47 +62,50 @@
                 <?php
                 include("config.php");
                 switch (@$_REQUEST["page"]) {
-                    case "orcamento";
-                        include("novo-orcamento.php");
-                        break;
                     case "cliente";
-                        include("novo-cliente.php");
-                        break;
-                    case "colaborador":
-                        include("novo-colaborador.php");
-                        break;
-                    case "listaorcamentos":
-                        include("listar-orcamento.php");
+                        include("Clientes/novo-cliente.php");
                         break;
                     case "salvar":
-                        include("salvar-cliente.php");
+                        include("Clientes/salvar-cliente.php");
                         break;
                     case "editar":
-                        include("editar-cliente.php");
-                        break;
-                    case "salvarcolaborador":
-                        include("salvar-colaborador.php");
-                        break;
-                    case "editarcolaborador":
-                        include("editar-colaborador.php");
+                        include("Clientes/editar-cliente.php");
                         break;
                     case "listarclientes":
-                        include("listar-clientes.php");
+                        include("Clientes/listar-clientes.php");
                         break;
-                    case "estoque":
-                        include("listar-estoque.php");
+                    case "colaborador":
+                        include("Colaboradores/novo-colaborador.php");
                         break;
-                    case "cadastraritem":
-                        include("novo-estoque.php");
+                    case "salvarcolaborador":
+                        include("Colaboradores/salvar-colaborador.php");
                         break;
-                    case "salvaritem":
-                        include("salvar-estoque.php");
+                    case "editarcolaborador":
+                        include("Colaboradores/editar-colaborador.php");
                         break;
                     case "listarcolaboradores":
-                        include("listar-colaboradores.php");
+                        include("Colaboradores/listar-colaboradores.php");
+                        break;
+                    case "orcamento";
+                        include("Orcamentos/novo-orcamento.php");
                         break;
                     case "salvarorcamento":
-                        include("salvar-orcamento.php");
+                        include("Orcamentos/salvar-orcamento.php");
+                        break;
+                    case "listaorcamentos":
+                        include("Orcamentos/listar-orcamento.php");
+                        break;
+                    case "cadastraritem":
+                        include("Estoque/novo-estoque.php");
+                        break;
+                    case "salvaritem":
+                        include("Estoque/salvar-estoque.php");
+                        break;
+                    case "editaritem":
+                        include("Estoque/editar-estoque.php");
+                        break;
+                    case "estoque":
+                        include("Estoque/listar-estoque.php");
                         break;
                     default:
                         print "<h1>Bem vindo!</h1>";

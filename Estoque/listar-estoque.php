@@ -26,7 +26,7 @@
             print "<td>".$row->quantidade."</td>";
             print "<td>".$row->preco."</td>";
             print "<td style='display: flex; justify-content: center;'>
-                    <button onclick=\"location.href='?page=cadastraritem&id=".$row->id."'\" style='margin-right: 10px;' class='btn btn-success'>Editar</button>
+                    <button onclick=\"location.href='?page=editaritem&id=".$row->id."'\" style='margin-right: 10px;' class='btn btn-success'>Editar</button>
                     <button onclick=\"if(confirm('Tem certeza que deseja excluir o item?')){location.href='?page=salvaritem&acao=excluir&id=".$row->id."'}else{false;}\" class='btn btn-danger'>Excluir</button>
                     </td>";
             print "</tr>";
