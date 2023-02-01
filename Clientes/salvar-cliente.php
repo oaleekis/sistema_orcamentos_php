@@ -63,10 +63,10 @@ switch ($_REQUEST["acao"]) {
             $res = $conn->query($sql);
     
             if ($res == true) {
-                print "<script>alert('Colaborador editado com sucesso');</script>";
+                print "<script>alert('Cliente editado com sucesso');</script>";
                 print "<script>location.href ='?page=listarclientes';</script>";
             } else {
-                print "<script>alert('Não foi possivel editar o colaborador');</script>";
+                print "<script>alert('Não foi possivel editar o cliente');</script>";
                 print "<script>location.href ='?page=listarclientes';</script>";
             }
     

@@ -2,12 +2,16 @@
 switch ($_REQUEST["acao"]) {
     case 'cadastrar':
         $codigo = $_POST["codigo"];
-        $descricao = $_POST["descricao"];
-        $quantidade = $_POST["quantidade"];
+        $tipo = $_POST["tipo"];
+        $custo = $_POST["custo"];
         $preco = $_POST["preco"];
+        $descricao = $_POST["descricao"];
+        $fornecedor = $_POST["fornecedor"];
+        $tamanho = $_POST["tamanho"];
+        $quantidade = $_POST["quantidade"];
 
-        $sql = "INSERT INTO itens (codigo, descricao, quantidade, preco) 
-                VALUES ('{$codigo}', '{$descricao}', '{$quantidade}', '{$preco}')";
+        $sql = "INSERT INTO itens (codigo, tipo, custo, preco, descricao, fornecedor, tamanho, quantidade) 
+                VALUES ('{$codigo}', '{$tipo}', '{$custo}', '{$preco}', '{$descricao}', '{$fornecedor}', '{$tamanho}', '{$quantidade}')";
 
         $res = $conn->query($sql);
 
@@ -21,14 +25,22 @@ switch ($_REQUEST["acao"]) {
         break;
     case 'editar': 
         $codigo = $_POST["codigo"];
-        $descricao = $_POST["descricao"];
-        $quantidade = $_POST["quantidade"];
+        $tipo = $_POST["tipo"];
+        $custo = $_POST["custo"];
         $preco = $_POST["preco"];
+        $descricao = $_POST["descricao"];
+        $fornecedor = $_POST["fornecedor"];
+        $tamanho = $_POST["tamanho"];
+        $quantidade = $_POST["quantidade"];
 
         $sql = "UPDATE itens SET codigo='{$codigo}',
-                                    descricao='{$descricao}', 
-                                    quantidade='{$quantidade}', 
-                                    preco='{$preco}'
+                                    tipo='{$tipo}', 
+                                    custo='{$custo}', 
+                                    preco='{$preco}',
+                                    descricao='{$descricao}',
+                                    fornecedor='{$fornecedor}',
+                                    tamanho='{$tamanho}',
+                                    quantidade='{$quantidade}'
                                 WHERE 
                                     id=" . $_REQUEST["id"];
 

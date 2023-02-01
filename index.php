@@ -25,9 +25,10 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" href="?page=orcamento">Orçamento</a>
                     </li>
+                    -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -35,13 +36,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="?page=cliente">Cliente</a></li>
-                            <li><a class="dropdown-item" href="?page=colaborador">Colaborador</a></li>
+                            <li><a class="dropdown-item" href="?page=fornecedor">Fornecedor</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="?page=listarclientes">Listar Clientes</a></li>
-                            <li><a class="dropdown-item" href="?page=listarcolaboradores">Listar Colaboradores</a></li>
-                            <li><a class="dropdown-item" href="?page=listaorcamentos">Listar Orçamentos</a></li>
+                            <li><a class="dropdown-item" href="?page=listarfornecedor">Listar Fornecedores</a></li>
+                           <!--<li><a class="dropdown-item" href="?page=listaorcamentos">Listar Orçamentos</a></li>-->
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -74,17 +75,17 @@
                     case "listarclientes":
                         include("Clientes/listar-clientes.php");
                         break;
-                    case "colaborador":
-                        include("Colaboradores/novo-colaborador.php");
+                    case "fornecedor":
+                        include("Fornecedores/novo-fornecedor.php");
                         break;
-                    case "salvarcolaborador":
-                        include("Colaboradores/salvar-colaborador.php");
+                    case "salvarfornecedor":
+                        include("Fornecedores/salvar-fornecedor.php");
                         break;
-                    case "editarcolaborador":
-                        include("Colaboradores/editar-colaborador.php");
+                    case "editarfornecedor":
+                        include("Fornecedores/editar-fornecedor.php");
                         break;
-                    case "listarcolaboradores":
-                        include("Colaboradores/listar-colaboradores.php");
+                    case "listarfornecedor":
+                        include("Fornecedores/listar-fornecedor.php");
                         break;
                     case "orcamento";
                         include("Orcamentos/novo-orcamento.php");

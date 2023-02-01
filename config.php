@@ -2,7 +2,7 @@
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
-define('BASE', 'cliente');
+define('BASE', 'lojaroupas');
 
 $conn = new mysqli(HOST, USER, PASS, BASE);
 
